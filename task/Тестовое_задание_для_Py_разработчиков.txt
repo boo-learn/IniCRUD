@@ -1,0 +1,30 @@
+Demlabs.
+
+Тестовое задание по Python.
+
+Имеется файловая структура на удаленном сервере:
+a/a1.cfg
+a/a2.cfg
+b/b1.cfg
+b/b2.cfg
+
+.сfg файл - конфигурационный файл в ini формате (https://en.wikipedia.org/wiki/INI_file). 
+Может содержать комментарии ("# comment","; comment"), пустые строки, множество секций.
+
+Используя библиотеку Paramiko написать скрипт, 
+который умеет читать и изменять  заданый файл конфигурации, со следующим коммандным интерфейсом:
+
+1) Прочитать параметр из конфига config/a/a1
+
+scrypt.py --addr user@adderess:port:~/path-to-cfgdir/ get a.a1.section_name.param_name
+>> /full/path/to/config:section:pram_name = readed_value
+
+2) Изменить параметр в конфиге
+scrypt.py --addr user@adderess:port:~/path-to-cfgdir/ set b.b2.section_name2.param_name2 value2
+>>>> /full/path/to/config:section:pram_name = seted_value
+
+Если заданого файла конфигурации нет - его нужно создать.
+Если в файле конфиугации нет заданой секции - ее нужно добавить.
+Если в файле конфигурации нет заданого параметра - его нужно добавить.
+В противном случае - заменить имеющийся value на указаный. 
+Закоментированые строки нужно пропускать, не обращая внимание на их содержимое. 

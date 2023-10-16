@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "inicrud"
+version = "0.1.0"
+description = ""
+authors = ["boo <booblegum42@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+paramiko = "^3.3.1"
+commented-configparser = "^1.0.0"
+click = "^8.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
